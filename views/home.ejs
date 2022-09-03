@@ -1,0 +1,13 @@
+<%- include('partials/header'); -%>
+
+<h1 style="text-align:center ;">Welcome To Daily Journal!</h1>
+<h3 style="text-align:center ;">This website is called Daily Journal. In this Website you can Compose your own daily journal and keep track of all the things you achieved throughout the day.To Compose Journal click the Button Below!
+    <br><br><a href="/compose" style="text-align:center ;"><button class="btn btn-primary">Compose</button></a>
+</h3>
+
+<% posts.forEach(function(post){ %>
+    <h1> <%=post.title%> </h1>
+    <p><%=post.content.substr(0,100)+"..."%><a href="/posts/<%= post.title %>"> Read more>></a> </p>
+<% }); %>
+
+<%- include('partials/footer'); -%> 
